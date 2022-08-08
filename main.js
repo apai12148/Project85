@@ -2,10 +2,10 @@
 canvas = document.getElementById("myCanvas");
 ctx = canvas.getContext("2d")
 //Give specific height and width to the car image
-greeencar_width = 75;
+greencar_width = 75;
 greencar_height = 100;
 background_img = "parkingLot.jpg";
-greencar_image = "car2.png";
+greencar_img = "car2.png";
 
 //Set initial position for a car image.
 greencar_x = 5;
@@ -18,7 +18,7 @@ function add() {
 
 	greencar_imgTag = new Image();
 	greencar_imgTag.onload = uploadgreencar;
-	greencar_img.src = greencar_img;
+	greencar_imgTag.src = greencar_img;
 }
 
 function uploadBackground() {
@@ -28,7 +28,7 @@ function uploadBackground() {
 
 function uploadgreencar() {
 	//Define function ‘uploadgreencar’.
-	ctxdrawImage(greeencar_imgTag, greencar_x,greencar_y, greencar_width, greencar_height)
+	ctx.drawImage(greencar_imgTag, greencar_x,greencar_y, greencar_width, greencar_height)
 	
 }
 
@@ -73,18 +73,18 @@ function up()
 		greencar_y = greencar_y - 10;
 		console.log("When up arrow is presed,  x = " + greencar_x + " y = " +greencar_y);
 		uploadBackground();
-		upload_greencar();
+		uploadgreencar();
 	}
 }
 
 function down()
 {
 	//Define function to move the car downward
-	if(greencar_y >=300){
+	if(greencar_y <=350){
 		greencar_y = greencar_y + 10;
-		console.log("When up arrow is presed,  x = " + greencar_x + " y = " +greencar_y);
+		console.log("When up arrow is presed,  x = " + greencar_x + " y = " + greencar_y);
 		uploadBackground();
-		upload_greencar();
+		uploadgreencar();
 	}
 }
 
@@ -95,17 +95,17 @@ function left()
 		greencar_x = greencar_x - 10;
 		console.log("When up arrow is presed,  x = " + greencar_x + " y = " +greencar_y);
 		uploadBackground();
-		upload_greencar();
+		uploadgreencar();
 	}
 }
 
 function right()
 {
 	//Define function to move the car right side
-	if(greencar_x >=700){
+	if(greencar_x <=700){
 		greencar_x = greencar_x + 10;
 		console.log("When up arrow is presed,  x = " + greencar_x + " y = " +greencar_y);
 		uploadBackground();
-		upload_greencar();
+		uploadgreencar();
 	}
 }
