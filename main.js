@@ -14,7 +14,7 @@ function add() {
 	//upload car, and background images on the canvas.
 	background_imgTag = new Image();
 	background_imgTag.onload = uploadBackground;
-	background_imgTag.src = background_image;
+	background_imgTag.src = background_img;
 
 	greencar_imgTag = new Image();
 	greencar_imgTag.onload = uploadgreencar;
